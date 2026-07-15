@@ -1,0 +1,215 @@
+@layer base {
+  .pageWrapper {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: var(--font-family-base);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Orbs */
+  .heroGlow {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--primary) 6%, transparent) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .heroOrb1,
+  .heroOrb2,
+  .heroOrb3 {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  .heroOrb1 {
+    width: 400px;
+    height: 400px;
+    top: -5%;
+    right: 10%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--primary) 12%, transparent), transparent);
+    animation: float1 8s ease-in-out infinite;
+  }
+
+  .heroOrb2 {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: -5%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent), transparent);
+    animation: float2 10s ease-in-out infinite;
+  }
+
+  .heroOrb3 {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    right: 30%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--primary) 8%, transparent), transparent);
+    animation: float3 12s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 20px); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -25px); }
+  }
+
+  @keyframes float3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-15px, -15px); }
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-6);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .logo {
+    font-family: var(--font-family-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 1px;
+  }
+
+  .pulseDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    box-shadow: 0 0 12px var(--primary);
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .heroName {
+    font-family: var(--font-family-display);
+    font-size: clamp(4rem, 15vw, 6rem);
+    line-height: 1;
+    font-weight: 400;
+    margin: 0 0 var(--spacing-2) 0;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, hsl(40, 70%, 60%), hsl(40, 70%, 75%), hsl(195, 30%, 55%), hsl(40, 70%, 60%));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .subtitle {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 300;
+    color: var(--foreground);
+    margin: 0 0 var(--spacing-6) 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: var(--spacing-4) 0 var(--spacing-6) 0;
+    border-radius: 2px;
+  }
+
+  .message {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    margin: 0 0 var(--spacing-8) 0;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+  }
+
+  .linkButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--surface) 50%, transparent);
+    backdrop-filter: blur(8px);
+    font-size: 0.9375rem;
+  }
+
+  .linkButton:hover {
+    color: var(--primary);
+    border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 767px) {
+    .heroOrb1 { width: 250px; height: 250px; }
+    .heroOrb2 { width: 200px; height: 200px; }
+    .heroOrb3 { width: 150px; height: 150px; }
+    
+    .links {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .linkButton {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
