@@ -1,0 +1,28 @@
+@layer base {
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @media (min-width: 640px) {
+    .formRow {
+      flex-direction: row;
+      gap: var(--spacing-4);
+    }
+    
+    .flexItem {
+      flex: 1;
+    }
+  }
+
+  .submitButton {
+    margin-top: var(--spacing-2);
+    align-self: flex-start;
+  }
+}

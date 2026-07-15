@@ -1,0 +1,152 @@
+
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+
+
+:root {
+  /* Overlay layers */
+  --z-overlay: 400;
+
+  --z-spotlight: 1000; /* Tutorial spotlights/guided help */
+
+  /* System layers */
+  --z-critical: 2000; /* Critical system notifications */
+
+  /* spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+}
+
+:root {
+  /* Cinematic Monolith - Dark Theme Palette */
+  --background: hsl(225, 15%, 6%);
+  --foreground: hsl(225, 15%, 90%);
+
+  --surface: hsl(225, 15%, 10%);
+  --surface-foreground: hsl(225, 15%, 90%);
+  
+  --sidebar: hsl(225, 15%, 8%);
+  --sidebar-foreground: hsl(225, 15%, 85%);
+  
+  --card: hsl(225, 15%, 10%);
+  --card-foreground: hsl(225, 15%, 90%);
+  
+  --popup: hsl(225, 15%, 12%);
+  --popup-foreground: hsl(225, 15%, 90%);
+
+  /* Warm Metallic Gold */
+  --primary: hsl(40, 70%, 60%);
+  --primary-foreground: hsl(225, 15%, 6%);
+
+  /* Muted Slate */
+  --secondary: hsl(225, 15%, 16%);
+  --secondary-foreground: hsl(225, 15%, 85%);
+
+  /* Soft Slate-Teal */
+  --accent: hsl(195, 45%, 45%);
+  --accent-foreground: hsl(0, 0%, 100%);
+
+  --muted: hsl(225, 10%, 16%);
+  --muted-foreground: hsl(225, 10%, 65%);
+
+  --success: hsl(150, 40%, 40%);
+  --success-foreground: hsl(0, 0%, 100%);
+  
+  --error: hsl(350, 45%, 50%);
+  --error-foreground: hsl(0, 0%, 100%);
+  
+  --warning: hsl(35, 60%, 50%);
+  --warning-foreground: hsl(225, 15%, 6%);
+  
+  --info: hsl(210, 40%, 45%);
+  --info-foreground: hsl(0, 0%, 100%);
+  --info-hover: hsl(210, 40%, 50%);
+  --info-active: hsl(210, 40%, 40%);
+
+  --border: hsl(225, 15%, 18%);
+
+  /* Typography */
+  --font-family-base: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-family-display: 'Instrument Serif', Georgia, serif;
+  --font-family-monospace: 'JetBrains Mono', monospace;
+  --font-family-cursive: 'Instrument Serif', serif;
+
+  /* Border Radius - Kept minimal for a structured, monolithic feel */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows - Deep and subtle for dark mode */
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px hsl(225, 15%, 18%);
+  --shadow-focus: 0 0 0 2px hsl(225, 15%, 6%), 0 0 0 4px hsl(40, 70%, 60%);
+
+  /* Animation */
+  --animation-duration-fast: 150ms;
+  --animation-duration-normal: 300ms;
+  --animation-duration-slow: 500ms;
+
+  /* Chart Colors - Muted, sophisticated tones */
+  --chart-color-1: hsl(40, 70%, 60%);
+  --chart-color-2: hsl(195, 30%, 45%);
+  --chart-color-3: hsl(225, 20%, 40%);
+  --chart-color-4: hsl(350, 30%, 50%);
+  --chart-color-5: hsl(150, 25%, 40%);
+}
+
+.dark {
+  /* Design is dark-only by default; variables are set in :root */
+}
+@layer base {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-family-base);
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  th, td {
+    display: table-cell!important;
+  }
+}
+.rbc-month-view {
+  overflow: visible !important;
+}
